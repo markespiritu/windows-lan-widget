@@ -11,21 +11,23 @@ Handy when you're hopping between several PCs over Moonlight/RDP and can't remem
 
 | Action | How |
 | --- | --- |
-| Move it | Hold **Ctrl** and drag it. The border turns blue while Ctrl is held. Position is remembered. |
-| Resize it | Hold **Ctrl** and scroll the mouse wheel over it, or hold **Ctrl** and drag its bottom-right corner. Size is remembered; menu → **Reset size** goes back to 100%. |
-| Options menu | Hold **Ctrl** and right-click it. |
+| Move it | Hold **Shift + Alt** and drag it. The border turns blue while Shift + Alt are held. Position is remembered. |
+| Resize it | Hold **Shift + Alt** and scroll the mouse wheel over it, or hold **Shift + Alt** and drag its bottom-right corner. Size is remembered; menu → **Reset size** goes back to 100%. |
+| Options menu | Hold **Shift + Alt** and right-click it. |
 | Pick the adapter | Menu → **Adapter**. *Automatic* follows whichever adapter Windows uses for internet traffic. |
 | Hide fields (e.g. the MAC, for privacy) | Menu → **Show fields** and untick any of hostname, IP, MAC, type, speed. |
 | Short IP (e.g. `26.218`) | Menu → **IP address format** → Full / Last two parts / Last part only. |
 | Font, size, style, colour, spacing | Menu → **Font, style, color and spacing…** opens one dialog: a searchable font list (one font for every field), a size, weight (Light to Black), italic and underline per field, the text colour (presets or **Custom…**), hostname capitalization (UPPERCASE, Capitalized `Frogger`, lowercase, as named in Windows), and spacing sliders (between rows -60 to 40, so rows can overlap; between columns -40 to 80). The widget updates as you change things; **OK** keeps them, **Cancel** or **Esc** undoes them. Dark colours automatically get a light panel / light halo. |
 | Close the menu | **Esc**, or click anywhere else. |
-| Text only, no background | Menu → untick **Show background**. The text gets a dark halo so it stays readable; holding Ctrl shows a faint outline so you can still grab it. Untick **Text shadow** to drop the halo too. |
+| Text only, no background | Menu → untick **Show background**. The text gets a dark halo so it stays readable; holding Shift + Alt shows a faint outline so you can still grab it. Untick **Text shadow** to drop the halo too. |
 | Show it above windows | Menu → **Keep on top of other windows** |
 | Start with Windows | Menu → **Start with Windows** (adds a shortcut to your Startup folder) |
 | Lost it off-screen | Menu → **Reset position** (it also resets itself if its saved spot is no longer on any screen) |
 | Quit | Menu → **Exit** |
 
-Without Ctrl held, the widget ignores the mouse completely, so clicks go through to the desktop or window beneath it.
+Without Shift + Alt held, the widget ignores the mouse completely, so clicks go through to the desktop or window beneath it.
+
+**From a Mac (e.g. over Moonlight):** press **Shift + Option**. Option is the Mac key in the Alt position, and Moonlight sends it to Windows as Alt.
 
 The info refreshes as soon as Windows reports a network change, and every 15 seconds anyway (Wi-Fi link speed moves around).
 

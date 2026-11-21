@@ -136,7 +136,25 @@ internal static class NativeMethods
         finally { handle.Free(); }
     }
 
-    public static bool IsCtrlDown() => (GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0;
+    public const int VK_MENU = 0x12, VK_SHIFT = 0x10;
+
+    private static bool Down(int vk) => (GetAsyncKeyState(vk) & 0x8000) != 0;
+
+    [DllImport("user32.dll")]
+    private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
+
+    /// <summary>
+    /// Taps an unassigned key (VK 0xE8). Once Shift+Alt have been used for a click, this stops Windows
+    /// from treating the Alt release as "focus the menu bar" in the app in front.
+    /// </summary>
+    public static void MaskModifierRelease()
+    {
+        keybd_event(0xE8, 0, 0, UIntPtr.Zero);
+        keybd_event(0xE8, 0, 2, UIntPtr.Zero);
+    }
+
+    /// <summary>The "edit the widget" modifier: Shift + Alt held together (works through Moonlight, unlike Win).</summary>
+    public static bool IsModifierDown() => Down(VK_SHIFT) && Down(VK_MENU);
 
     public static void SetExStyle(IntPtr hwnd, int add, int remove)
     {
